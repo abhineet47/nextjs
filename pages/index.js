@@ -1,65 +1,102 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import React, {useEffect} from 'react';
+import { connect } from 'react-redux';
+import { globalLoaderFunc } from '../component/actions/commonActions';
+import Router from 'next/router'
+import Head from 'next/head';
+import Header from '../component/header/header'
+import Footer from '../component/footer/footer'
+import JobSearch from '../component/homepage/jobSearch';
+import { MAIN_URL } from '../component/types/types';
+import axios from 'axios';
+import https from 'https';
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+const Axios = axios.create({
+    httpsAgent: new https.Agent({  
+      rejectUnauthorized: false
+    })
+  });
+//export const config = { unstable_runtimeJS: false };
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
+const Home=(props)=>  {
+  useEffect(()=>{
+    props.handleLoader(false);
+  
+  }, [])
+
+
+    return (
+      <>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        {/* <title>My page title</title> */}
+      { ReactHtmlParser(Array.isArray(props?.content?.pageContent?.metaInfo) && props?.content?.pageContent?.metaInfo.reduce((prev, curr)=>prev+curr)) }
+
+        {/* { ReactHtmlParser(props?.content?.pageContent?.metaInfo?props?.content?.pageContent?.metaInfo:'<title>Theincircle.com - Best Job Portal for Freshers and Experienced in India </title>') } */}
+        
       </Head>
+      <Header data={props?.content?.header}/>
+     
+      {/* { ReactHtmlParser(html) } */}
+        <JobSearch data={props?.content?.pageContent?.bannerSection}/>               
+     
+      <Footer data={props?.content?.footer}/>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+       </>
+    )
+  }
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+export async function getStaticProps(context) {
+  
+  let header ={}
+  let query = context?.req?.headers?.cookie;
+  if(query){    
+      var langOwn =query.match('(^|;)\\s*' + "langOwn" + '\\s*=\\s*([^;]+)');
+      langOwn =  langOwn ? langOwn.pop() : '';
+      if(langOwn){
+        header.langOwn=langOwn;
+      };
+      var authtoken =query.match('(^|;)\\s*' + "authtoken" + '\\s*=\\s*([^;]+)');
+      authtoken =  authtoken ? authtoken.pop() : '';
+      if(authtoken){
+        header.jwt=authtoken;
+      };
+      var userId =query.match('(^|;)\\s*' + "userId" + '\\s*=\\s*([^;]+)');
+      userId =  userId ? userId.pop() : '';
+      if(userId){
+        header.userid=userId;
+      };
+      var latitude =query.match('(^|;)\\s*' + "latitude" + '\\s*=\\s*([^;]+)');
+      latitude =  latitude ? latitude.pop() : '';
+      if(latitude){
+        header.latitude=latitude;
+      };
+      var longitude =query.match('(^|;)\\s*' + "longitude" + '\\s*=\\s*([^;]+)');
+      longitude =  longitude ? longitude.pop() : '';
+      if(longitude){
+        header.longitude=longitude;
+      };
+    }
+   
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+  const res = await Axios.get(`${MAIN_URL}/content/home`, {headers:header});
+  console.log(res.data,":");
+  return {
+    props: {
+      content:res.data?.data,
+    },
+    unstable_revalidate:600
+  }
 }
+
+const mapStateToProps = state => ({
+  currentClassData: state.product.currentJobData,
+  classId: state.product.classId,
+  classType: state.product.classType,
+})
+
+const mapDispatchToProps = dispatch => ({
+  handleLoader: data => dispatch(globalLoaderFunc(data)),
+  currentClassDetails: (data, classId, classType) => dispatch(currentClassDetails(data, classId, classType))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -1,0 +1,68 @@
+.jobs-area-link a{border:0; padding: 0 0 20px;}
+.jobs-area-link a:hover {box-shadow: none;border: 0; }
+
+
+.jobs-area-link ul li a {
+    font-family: "Segoe UI";
+   
+    border-radius: 10px;
+    padding:0;
+    margin: 0;
+    text-align: left;
+    font-size:16px;
+    display: inline-block;
+}
+.jobs-area-link ul{margin:0; padding:0 15px}
+.jobs-area-link ul li {
+    margin: 10px 0;
+    padding: 5px 10px;
+    list-style-type: none;
+    background: #f6f7fd;
+    border-radius: 5px;
+    border: 1px solid #e8eaf9;
+}
+
+.jobs-area-link ul li i{color:#4878c2}
+.jobs-area-link ul li a{color:#555452; padding-left:10px;}
+.jobs-area-link ul li a:hover{color:#4878c2}
+.jobs-area-link .skill-pannel{border: 1px solid #cbd4da;border-radius: 10px; padding:0px; margin: 20px 0;}
+.view-all a{font-size:16px; font-style:italic; text-align:right; margin-right:15px;color:#4878c2; padding:0;}
+.abaut p{font-family: "arial";}
+.abaut a{color:#4878c2}
+.abaut{margin-top: 75px;}
+.contact  h6{line-height: 24px;}
+.about h1.job-header {
+    margin: 0;
+    padding: 0 !important;
+    font-size: 36px;
+    font-weight: normal;
+    color: #00a0e4 !important;
+}
+.about .tnc-page p{
+    font-size: 13px;
+    color: #555;
+}
+.about .tnc-page p a{color:#00a0e4}
+.about .tnc-page p a:hover{color:#00a0e4; text-decoration: underline;}
+.other-profile{background:#121e42  !important; display:block; color:#73cff4 !important;text-shadow:1px 1px 10px #000; border:none; box-shadow:1px 1px 3px #000; color: #73cff4; font-size:24px; border-radius:5px; text-align:center;  margin:50px auto; padding:5px 20px; width:max-content;}
+.ordevider{text-align:center; width:50px; line-height:50px; height:50px; background:#fff; border-radius:50%;  margin:50px auto; border:1px solid #636467;}
+.other-profile:hover,a.js-labelFile:hover{background:#002287 !important; color: #fff !important;}
+.input-file {width: 0.1px;height: 0.1px;opacity: 0;overflow: hidden;position: absolute;z-index: -1;}
+a.js-labelFile {margin: 0 auto; display:block; padding:5px 20px; float: none;background:#121e42;border:none; box-shadow:1px 1px 3px #000; color: #fff !important;border-radius:5px; text-align:center; width: max-content; font-size:18px;}
+#resume{border: 1px solid #00a0e4;padding: 10px;margin-bottom: 5px; border-radius: 5px;color: #00a0e4; width: 300px;max-width: 100%; margin: 0px auto 5px;}
+
+
+
+.resume{padding-top: 10px;}
+@media(max-width:768px){
+    .home.post-resume h1.job-header{margin: 0; padding: 0;}
+    .post-resume .latest-jobs article{margin:0 0; padding:10px 10px 10px 15px}
+    .ordevider, .other-profile{margin:10px auto; }
+    .abaut .card {padding:10px}
+    .abaut{border-bottom: 5px solid #ccc;}
+    .abaut h1{font-size: 32px; line-height: 40px; margin: 0; padding: 0;}
+    .abaut .card.faq{padding: 0; border: none; background: transparent;}
+    .contact  .card{padding: 10px !important; margin-bottom: 20px;}
+   
+
+}

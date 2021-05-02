@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <defs>
+        <style>
+            .prefix__cls-2{fill:#fff}.prefix__cls-3{fill:none}
+        </style>
+    </defs>
+    <g id="prefix__Group_2327" data-name="Group 2327" transform="translate(-238.712 -250.712)">
+        <circle id="prefix__Ellipse_244" cx="8" cy="8" r="8" data-name="Ellipse 244" transform="translate(238.712 250.712)" style="fill:#00ff93"/>
+        <g id="prefix__Group_1907" data-name="Group 1907" transform="translate(243.088 255.136)">
+            <g id="prefix__Yes">
+                <path id="prefix__Checkbox" d="M3.876 6.717L1 3.651l.683-.728L3.876 5.21 7.825 1l.683.728z" class="prefix__cls-2" transform="translate(-1 -.436)"/>
+                <path id="prefix__Rectangle_556" d="M0 0H7.151V7.151H0z" class="prefix__cls-3" data-name="Rectangle 556" transform="translate(.049)"/>
+            </g>
+            <g id="prefix__Yes-2" data-name="Yes" transform="translate(.907)" style="opacity:.8">
+                <path id="prefix__Checkbox-2" d="M3.876 6.717L1 3.651l.683-.728L3.876 5.21 7.825 1l.683.728z" class="prefix__cls-2" data-name="Checkbox" transform="translate(-.988 -.436)"/>
+                <path id="prefix__Rectangle_556-2" d="M0 0H7.151V7.151H0z" class="prefix__cls-3" data-name="Rectangle 556"/>
+            </g>
+        </g>
+    </g>
+</svg>

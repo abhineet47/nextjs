@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="prefix__Group_1709" width="34.451" height="45.413" data-name="Group 1709" viewBox="0 0 34.451 45.413">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:#0a0a0a}
+        </style>
+    </defs>
+    <circle id="prefix__Ellipse_131" cx="3" cy="3" r="3" class="prefix__cls-1" data-name="Ellipse 131" transform="translate(6.226 18.707)"/>
+    <circle id="prefix__Ellipse_132" cx="3" cy="3" r="3" class="prefix__cls-1" data-name="Ellipse 132" transform="translate(20.226 25.707)"/>
+    <path id="prefix__Path_1311" d="M352 35.312v6.723h6.723z" class="prefix__cls-1" data-name="Path 1311" transform="translate(-325.379 -34.205)"/>
+    <circle id="prefix__Ellipse_133" cx="3" cy="3" r="3" class="prefix__cls-1" data-name="Ellipse 133" transform="translate(20.226 12.707)"/>
+    <path id="prefix__Path_1312" d="M105.838 33.4a.783.783 0 01-.783-.783V24H80v45.413h34.451V33.4zM87.83 25.566h15.66v1.566H87.83zm0 4.7h15.66v1.564H87.83zm-3.132-4.7h1.566v1.566H84.7zm0 4.7h1.566v1.564H84.7zm-3.132-4.7h1.566v1.566h-1.566zm0 4.7h1.566v1.564h-1.566zm25.055 36.017H81.566v-1.568h25.055zm0-4.7H81.566v-1.566h25.055zm-3.132-3.915a4.7 4.7 0 01-4.7-4.7 4.649 4.649 0 01.112-1.008l-6.167-2.74a4.7 4.7 0 110-6.6l6.069-2.7c0-.088-.013-.177-.013-.268a4.7 4.7 0 11.369 1.824l-5.515 2.451a4.641 4.641 0 010 3.978l5.848 2.6a4.7 4.7 0 114 7.156zm6.264 8.613h-1.566v-1.566h1.566zm0-4.7h-1.566v-1.564h1.566zm3.132 4.7h-1.566v-1.566h1.566zm0-4.7h-1.566v-1.564h1.566z" class="prefix__cls-1" data-name="Path 1312" transform="translate(-80 -24)"/>
+</svg>

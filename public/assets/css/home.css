@@ -1,0 +1,222 @@
+header {padding:5px 10px; position:fixed; top:0px;  width:100%; background:#fff; z-index:99; box-shadow:2px 2px 10px #ccc;}
+
+header .logo{padding:0px}
+.navbar-nav {width: 100%;align-items: self-end;justify-content: flex-end;padding-right:0px; font-family:'Calibri'; font-size:18px;}
+.navbar-light .navbar-nav  a.nav-link{line-height:58px; padding:0 20px !important; display:inline-block; color:#636467;}
+.navbar-light .navbar-nav a.nav-link.login{color: #5284b9; padding: 5px 20px !important;border: 1px solid #5284b9;line-height: 30px;margin: 9px 20px 0;border-radius: 20px i !important;}
+.navbar-light .navbar-nav a.nav-link.login:hover{background:#5284b9; color:#fff}
+.navbar-expand-lg{margin:0; padding:0;}
+.navbar-light .navbar-nav  a:hover{background:#ffec3d; transition:0.3s}
+.navbar-light .navbar-nav  a.employer{background:#5284b9; color:#fff}
+.navbar-light .navbar-nav  a.employer:hover{background:#00a0e4; color:#fff; transition:0.3s}
+.bg-banner{background:#e8eaf9 url(../images/bg-banner.webp) bottom center; background-repeat:repeat-x;}
+h1{font:lighter 40px/60px 'Segoe UI'; color:#000000; padding:20px 0 0px; text-align: left;}
+
+/*================== Banner Area ======================= */
+
+.anchor-banner{position:relative;  border:5px solid #d3d6ee; margin-right:20px}
+.anchor-banner h2{font-size:28px; line-height:40px; text-align:center; background-image:linear-gradient(#d5f1f5, #FFF ); margin:0; padding:5px 0; border-bottom: 0;}
+.anchor-button{background:url(../images/button-bg.webp) repeat-x bottom center; position:absolute; bottom:0; left:0; width:100%;}
+.anchor-button a{border-radius:40px; border:5px solid rgba(255, 236, 61, .5);  display:block;-moz-outline-radius: 25px;  width:max-content; margin:25px auto; color:#000000;  }
+.anchor-button a span{background:#ffec3d; display:block; padding:10px 20px;border-radius:30px; font-size:18px; padding-right:50px; position:relative;}
+.anchor-button a span i{right:20px; top:30%; position:absolute}
+.anchor-button a:hover{text-decoration:none; color:red}
+.anchor-button a:hover span i{right:10px; transition:1s; }
+.profile-grid ul,.profile-grid2 ul{list-style-type:none; padding:0; margin-bottom:0 }
+.profile-grid ul li a, .profile-grid2 ul li a{background:#fff; display:block}
+.profile-grid ul li {margin-bottom:15px; margin-left:15px;}
+.profile-grid ul li a img,.profile-grid2 ul li a img{width:100%; }
+.profile-grid ul li  span, .profile-grid2 ul li span{font:lighter 16px/36px 'Segoe UI'; color:#000000; display:block; text-align:center; }
+.profile-grid ul li a:hover, .profile-grid2 ul li a:hover{text-decoration:none;}
+.profile-grid2 ul{margin:0; padding-bottom:0px}
+.profile-grid2 ul li{width:20%; padding:0 15px 15px  0}
+.profile-grid2{padding-bottom:20px}
+.profile-grid2 .text-right a,.location-link a{background:#fff; border:1px solid #acb1ce; padding:5px 10px; color:#00a0e4; font-size:14px; border-radius:20px; margin-right:15px;}
+.profile-grid2 .text-right a:hover, .location-link a:hover{background:#5284b9; color:#fff; text-decoration:none; transition:.5s}
+
+.bgapply-now{background: url(../images/bg-apply-now.webp) no-repeat left top; background-size: 100%  100%; min-height: 190px; padding: 15px 0 0;margin: 40px auto; width: 80%; position: relative;}
+.apply-text1{font-size: 26px;}
+.apply-text2{font-size: 36px;}
+
+.bgapply-now a {
+    background: #1f5ebd;
+    display: block;
+    width: max-content;
+    position: absolute;
+    bottom: -22px;
+    left: 40%;
+    padding: 0 40px;
+    border-radius: 25px;
+    color: #fff;
+}
+.job-bnner .location-link a{margin-right: 0;}
+/*==================End  Banner Area ======================= */
+
+/*==================Content Area ======================= */
+
+.facts .apply-now img{padding-bottom:0px;}
+.facts{text-align:center; font-size:26px; line-height:50px; }
+.facts h2{text-align:center; color:#e00f0f; font-size:36px; margin-top:20px; padding-bottom:10px;}
+.facts div img{padding-bottom:20px;}
+
+.home-page   h3, .testimonial h3, .profile-banner h3{font:32px/40px 'Segoe UI'; color:#000000; padding:20px 0 0px; text-align:center}
+
+.see-the-job img{border-bottom:5px solid #d3d6ee; margin-top:40px}
+.search-by-location a{border-radius:20px; background:#d2eaf7; color:#000000; padding:0 25px; line-height:36px; font-size:18px; display:inline-block; margin:5px }
+.search-by-location a:hover{background:#a6cfe5; text-decoration:none}
+.testimonial{border-top:1px solid #d9c8be; margin-top:50px;}
+.testimonial iframe{width:100% !important}
+.pro-banner{background:#e8eaf9 url(../images/footer-bg.webp) bottom center; background-repeat:repeat-x; text-align:center; border-bottom:1px solid #fff; padding-bottom:40px;}
+.profile-banner h3{color:#fff; padding-bottom:20px}
+a.CreateProfile{background:#ffec3d; display:block; width:max-content; margin:20px auto; padding:10px 40px;border-radius:30px; font-size:18px; color:#000;}
+a.CreateProfile:hover{text-decoration:none; background:#e1cb00}
+.latest-jobs .job-bnner  article {margin:5px 0 10px;padding: 10px 10px 0px 15px;box-shadow: 1px 1px 5px #5b5b5b;}
+.job-bnner article{background: #fdfdfd url(../images/bg-jobs-in-top-company.webp) bottom center; text-align:right; padding-right:10px; width:100%; min-height:212px; border:5px solid #d3d6ee; position:relative; margin-top:10px; background-size: 100% 100%;}
+.job-bnner article .thecompany{font-size:18px; text-shadow:1px 1px 1px #720000}
+.job-bnner article .thepost{font-size:18px;}
+.job-bnner .salary{font-size:18px; font-weight:600 }
+.job-bnner article  p{font-size:18px;font-weight:700}
+.job-bnner article  p span{font-size:12px; font-weight:normal; text-shadow:none; margin-top:5px;}
+.job-bnner .location{position:absolute; bottom:10px; left:10px; color:#fff; text-align:left; font-size:13px;}
+.job-bnner a{ color:#0077b5}
+.job-bnner  p.text-secondary span.badge.badge-pill.badge-danger{margin-top: 0px;}
+
+.location i{font-size:18px}
+.carousel.slide{padding-bottom:50px; margin-bottom:20px }
+.carousel-indicators li{background-color:#5284b9}
+/*==================End Content Area ======================= */
+
+
+/*========================= Footer Css ==================== */
+
+footer{background:#e8eaf9; padding:30px 0;}
+footer ul{margin:0 ; padding:0; list-style:none;}
+footer ul li{margin:0; padding:5px 0; line-height:18px}
+footer  h5 {font-size: 1.15rem;color: #555452; margin-top: 30px;}
+footer ul li a{color: #555452;}
+footer ul li a:hover{text-decoration:underline}
+.footer-note{padding:10px; font-size:12px; }
+footer ul li a {font-size: 14px;line-height: 18px;}
+li.social-1 a {background: #5284b9;line-height: 36px;width: 36px;display: block;font-size:18px;color: #fff;border-radius: 50%;}
+li.social-1 {display: inline-block;}
+li.social-1 a.facebook {background: #3b5998;}
+li.social-1 a.twitter {background: #55acee;}
+li.social-1 a.linkedin {background: #0077b5;}
+li.social-1 a.pinterest {background: #cb2027;}
+li.social-1 a.insta{background:#ff009c}
+
+.connect h5 {font-size: 20px;padding-bottom: 10px; }
+.footer-link h5{font-size:24px; font-weight:bold; display:inline-block}
+.connect {padding-top: 20px;}
+.footer-link {color:#ccc;}
+.footer-link a{padding:0 10px; font-size:12px; font-weight:400; color:#555; }
+.term-text, .footer-note {font-size: 12px;color: #999;}
+.add-to-home {height:114px;position:fixed; bottom: 10px;left: 10px;width:130px; padding: 0; z-index:9999; }
+.close-add-to-home{right:0; top:0; position:absolute}
+.add-to-home a{font-size:24px; color:#fff;}
+.add-to-home a:hover{text-decoration:none;}
+.location a { background: #fff;border: 1px solid #4773a2;padding:0 10px;font-size:12px; border-radius: 10px; line-height:24px; display:inline-block; margin-top:5px;}
+.location a:hover{text-decoration:none; background:#00a0e4; color:#ffffff;}
+.login {width: auto;}
+.login a {color: #427bb8; padding: 8px 30px;border-radius: 20px; margin: 0 20px;}
+.home{margin-top: 80px;}
+.testimonial .carousel-item{line-height: 32px;}
+.bgapply-now a:hover{ color: #fff; text-decoration: none; background: #4773a2;}
+/*========================= end Footer Css ==================== */
+
+@media(max-width:1269px){ 
+.see-the-job{position:relative}
+.pro-banner img{width:100% !important}
+.see-the-job img{width:230px !important; bottom:20px; left:0; position:absolute; margin:0}
+.apply-now img{max-width:100% !important;}
+}
+@media(max-width: 1024px){
+	.see-the-job img{width:180px !important;} 
+	.navbar-expand-lg {margin: 0;padding:0}
+	.profile-grid ul li {width:28%}
+	.profile-grid ul li span, .profile-grid2 ul li span {font: normal 15px/18px 'Segoe UI'; color: #000000;display: block;text-align: center;padding: 5px 0;}
+	.profile-grid2 ul li {width: 25%; padding: 0 15px 25px 0;}
+	.anchor-banner{margin-right: 0px;}
+	.anchor-button a span{font-size: 16px;}
+	.profile-grid2 ul {padding-bottom:20px;}
+	.facts img{width:100%; height:75%}
+	.facts{font-size: 18px;}
+	.home-page  h3, .testimonial h3, .profile-banner h3{padding:20px 0 0px;}
+	.search-by-location a{padding: 0 20px;margin:5px;}
+	.footer-note {padding: 10px 40px;}
+.connect {padding-top: 10px;}
+li.social-1 a {background: #5284b9;line-height:30px;width:30px;font-size: 18px;}
+.connect h5 {font-size:18px;padding-bottom: 0px;}
+ul.social-links{margin-bottom:0}
+.footer-link{padding:20px 0;}
+.navbar-light .navbar-nav a.nav-link{display:block}
+
+.navbar-light .navbar-nav {padding-right:0;}
+.see-the-job{display:none}
+.job-bnner{width:100%; max-width:100%; flex: 0 0 100%;}
+.latest-jobs article .thecompany { font-size: 18px;}
+.latest-jobs article p span {font-size: 11px;}
+}
+@media(max-width: 991px){
+.navbar-light .navbar-nav .nav-item{width:100%; border-top:1px solid #5284b9}
+.navbar-light .navbar-nav a.nav-link.login {color: #5284b9; padding: 0 !important; border: 0; line-height: 30px; margin: 9px 20px 15px; border-radius: 20px;}
+}
+@media(max-width: 768px){
+.job-bnner .salary,.job-bnner article .thepost{font-size:16px; }
+.mobile-sticky {position: fixed;bottom: 0;background: #fff;border-top: 1px solid #ccc; padding: 20px 2px;width: 100%;z-index: 99; margin: 0 0 0px;left: 0;}	
+.user-details a.viewdeatails, .user-details a.applynow { font-size: 22px !important; }
+
+
+
+.profile-grid ul li{width:46%; padding:0; margin:5px; border:1px solid #c1c5e5}
+.bg-banner .col-sm-5, .profile-grid2{ padding:5px;}
+.profile-grid2 ul li {width:50%;padding:5px 3px  0 0; }
+.profile-grid2 ul li:nth-child(even) {padding:5px 0  0 2px;}
+.profile-grid2 ul li a{border:1px solid #c1c5e5}
+.facts img {width: 50%;height: auto;}
+.apply-now img{width:100% !important;}
+.apply-now {padding:10px 0 0;}
+.apply-now br{display:none}
+.see-the-job img {width: 150px !important;}
+.home-page   h3, .testimonial h3, .profile-banner h3 { font: lighter 26px/50px 'Segoe UI';}
+.navbar-light .navbar-nav a.nav-link{display:block}
+.navbar-light .navbar-nav .nav-item{width:100%; border-top:1px solid #5284b9}
+.navbar-light .navbar-nav {padding-right:0;}
+.facts h2 {font-size: 36px;}
+header .logo{padding:0}
+.navbar button {float: right; margin-top:15px;} 
+main .bg-banner, .home {margin-top:70px; }
+.container-fluid.home-page{padding: 0;}
+header {padding: 0; z-index: 101;}
+h1 {padding:10px 0 0px; font-size:36px}
+body header .employee-icon { margin-top: -52px; margin-right: 5px;}
+
+.home-page   h3, .testimonial h3, .profile-banner h3 {font: normal 30px/40px 'Segoe UI';}
+.search-by-location a {padding: 0 10px; margin: 3px; line-height: 28px;font-size: 16px;}
+.employee-icon.d-none.d-md-none.d-sm-block {display: block !important; position: absolute;right: 70px; top:0;}
+.employee-icon span {display: inline-block;font-size: 12px;text-align: center; color: #4878c2;}
+.employee-icon span i {color: #3066b9;background: #e8eaf9; width: 30px; height: 30px;line-height: 30px;text-align: center;border-radius: 50%;display: block;font-size: 18px;margin: 0 auto;}
+.facts div img {padding-top: 20px; padding-bottom: 0px;}
+.add-to-home {height:75px;position:fixed; bottom:75px;left: 0px;width:90px; padding: 0; z-index:9999; }
+.add-to-home  img{width:90px;}
+
+
+.bgapply-now{background: url(../images/bg-mobile-apply-now.webp) no-repeat left top; background-size: 100%  100%; min-height: 190px; padding: 15px 0 0;margin:20px auto; width:100%; position: relative;}
+.apply-text1{font-size:18px;}
+.apply-text2{font-size:26px;}
+.anchor-banner{margin-top:20px;}
+.bgapply-now a {
+    background: #1f5ebd;
+    display: block;
+    width: max-content;
+    position: absolute;
+    bottom: -22px;
+    left:25%;
+    padding: 0 40px;
+    border-radius: 20px;
+    color: #fff;
+}
+
+.carousel.slide {padding-bottom: 0px;}
+
+}
