@@ -112,65 +112,18 @@ const redirectCanonicalRoute=()=>{
 
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps(({ req,res, params }) {
   
-    let header ={}
-    let query = context?.req?.headers?.cookie;
-    let queryUrl = context?.query?.dynamic;
-    console.log("QUESY URL",context?.query?.dynamic);
 
-    if(query){    
-        var langOwn =query.match('(^|;)\\s*' + "langOwn" + '\\s*=\\s*([^;]+)');
-        langOwn =  langOwn ? langOwn.pop() : '';
-        if(langOwn){
-          header.langOwn=langOwn;
-        };
-        var authtoken =query.match('(^|;)\\s*' + "authtoken" + '\\s*=\\s*([^;]+)');
-        authtoken =  authtoken ? authtoken.pop() : '';
-        if(authtoken){
-          header.jwt=authtoken;
-        };
-        var userId =query.match('(^|;)\\s*' + "userId" + '\\s*=\\s*([^;]+)');
-        userId =  userId ? userId.pop() : '';
-        if(userId){
-          header.userid=userId;
-        };
-        var latitude =query.match('(^|;)\\s*' + "latitude" + '\\s*=\\s*([^;]+)');
-        latitude =  latitude ? latitude.pop() : '';
-        if(latitude){
-          header.latitude=latitude;
-        };
-        var longitude =query.match('(^|;)\\s*' + "longitude" + '\\s*=\\s*([^;]+)');
-        longitude =  longitude ? longitude.pop() : '';
-        if(longitude){
-          header.longitude=longitude;
-        };
-      }
-    // Fetch data from external API
-    let res;
-    let jobDetails=false;
-    let obj = {
-      fromAlias:`${context.params.dynamic}`
+    if(req.url.endsWith("jobs")){
+        res.setHeader('Location', `/jobs${req.url}`)
+    }else{
+        res.setHeader('Location', `/job-detail${req.url}`)
     }
-    if(context.params.dynamic.startsWith("job-detail-")){
-      obj.jobAlias=`${context.params.dynamic}`;
-      res = await Axios.post(`${MAIN_URL}/jobs/jobs-details`,obj, {headers:header})
-      jobDetails=true;
-    }
-    else{
-      res = await Axios.post(`${MAIN_URL}/jobs/jobs-listing-new`,obj, {headers:header})
-    }
-    // let res = await Axios.post(`${MAIN_URL}/jobs/jobs-listing-new`,obj, {headers:header})
-    
-    // const data = await res.json()
-    let data=res.data;
-  
-    // Pass data to the page via props
-    return { props: { data:data,
-    queryurl:queryUrl,
-    aliasApi:obj.fromAlias ,
-  apiCall:!datatt,
-  jobDetails:jobDetails,} }
+
+    return {props: {}}
+
+   
   }
 
 const mapStateToProps = state => ({
