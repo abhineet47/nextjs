@@ -136,7 +136,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   handleLoader: data => dispatch(globalLoaderFunc(data)),
   currentClassDetails: (data, classId, classType) => dispatch(currentClassDetails(data, classId, classType))
-})
+});
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Jobs);
 
