@@ -112,7 +112,7 @@ const redirectCanonicalRoute=()=>{
 
 }
 
-export async function getServerSideProps(({ req,res, params }) {
+export async function getServerSideProps({ req,res, params }) {
      res.statusCode = 302;
 
     if(req.url.endsWith("jobs")){
