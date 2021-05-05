@@ -113,7 +113,7 @@ const redirectCanonicalRoute=()=>{
 }
 
 export async function getServerSideProps({ req,res, params }) {
-     res.statusCode = 302;
+     res.statusCode = 301;
 
     if(req.url.endsWith("jobs")){
         res.setHeader('Location', `/jobs${req.url}`)
