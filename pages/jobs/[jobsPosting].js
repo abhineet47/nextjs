@@ -73,15 +73,15 @@ useEffect(()=>{
 
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps({ req,res, params }) {
 
 
     
     let obj = {
-      fromAlias:`${context.params.jobsPosting}`
+      fromAlias:`${params.jobsPosting}`
     }
     let header ={}
-    let query = context?.req?.headers?.cookie;
+    let query = req?.headers?.cookie;
     if(query){    
         var langOwn =query.match('(^|;)\\s*' + "langOwn" + '\\s*=\\s*([^;]+)');
         langOwn =  langOwn ? langOwn.pop() : '';
@@ -110,11 +110,17 @@ export async function getServerSideProps(context) {
         };
       }
     // Fetch data from external API
-    const res = await Axios.post(`${MAIN_URL}/jobs/jobs-listing-new`,obj, {headers:header})
+    const result = await Axios.post(`${MAIN_URL}/jobs/jobs-listing-new`,obj, {headers:header})
     
     // const data = await res.json()
-    let data=res.data;
-  
+    let data=result.data;
+      if(data.status!=200){
+        console.log(data);   
+        res.statusCode = 301;
+        res.setHeader('Location', `/404`);
+        res.end();
+        return {props: {}};
+    }
     // Pass data to the page via props
     return { props: { data:data,
     aliasApi:obj.fromAlias ,
