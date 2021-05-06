@@ -10,7 +10,7 @@ import Router from "next/router";
 import ApplyNowModal from '../modal/applyNowModal'
 import GoogleAd from '../../component/googleAdd/GoogleAd';
 import Socialshare from './socialShare';
-
+import { useRouter } from 'next/router'
 
 const JobDetailsContent = (props) => {
   const [callModal, setCallModal] = useState(false);
@@ -19,7 +19,7 @@ const JobDetailsContent = (props) => {
   const [appliedHeader, setAppliedHeader] = useState(0);
   const [supportsPWA, setSupportsPWA] = useState(false);
   const [promptInstall, setPromptInstall] = useState(false);
-
+  const router = useRouter();
   useEffect(() => {
     if (props.applyLink) {
       applyJob()
@@ -147,7 +147,7 @@ const JobDetailsContent = (props) => {
      <h1  className="text-center job-header mt-0 mb-2">Job Details</h1>
 
       <article className="home mt-75">
-      <button className="btn next_t back_t" type="button" id="other-profile-check" ><span>Back</span> </button>
+      <button className="btn next_t back_t" onClick={() => router.back()} type="button" id="other-profile-check" ><span>Back</span> </button>
      <h1  className="text-center job-header mt-0 mb-2">Job Details</h1>
         <div className="card">
         <div className="card-body text-center">
