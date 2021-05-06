@@ -4,7 +4,7 @@ import { globalLoaderFunc } from '../component/actions/commonActions';
 import Router from 'next/router'
 import Head from 'next/head';
 import JobListing from '../component/jobListing/joblisting';
-import Axios from 'axios';
+import axios from 'axios';
 import Header from '../component/header/header';
 import Footer from '../component/footer/footer';
 import { data } from 'jquery';
@@ -17,7 +17,14 @@ import jobDetails from '../component/jobDetails/jobDetails';
 import $ from 'jquery';
 let datatt ='';
 let a = '<title data-react-helmet="true">react-html-parser  -  npm</title>'
+import https from 'https';
 
+
+const Axios = axios.create({
+    httpsAgent: new https.Agent({  
+      rejectUnauthorized: false
+    })
+  });
 
 const Jobs =(props)=> {
 
@@ -113,18 +120,20 @@ const redirectCanonicalRoute=()=>{
 }
 
 export async function getServerSideProps({ req,res, params }) {
-     res.statusCode = 301;
 
-		     
+
+
+    res.statusCode = 301;
+ 
     if(req.url.endsWith("jobs")){
         res.setHeader('Location', `/jobs${req.url}`)
-    }else{
+    }else if(req.url.includes("job-in")){
         res.setHeader('Location', `/job-detail${req.url}`)
+    }else{
+        res.setHeader('Location', `/404`);
     }
-  res.end();
+    res.end();
     return {props: {}}
-
-   
   }
 
 const mapStateToProps = state => ({
@@ -137,8 +146,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   handleLoader: data => dispatch(globalLoaderFunc(data)),
   currentClassDetails: (data, classId, classType) => dispatch(currentClassDetails(data, classId, classType))
-});
-
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(Jobs);
 
