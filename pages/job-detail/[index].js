@@ -126,8 +126,8 @@ export async function getServerSideProps({ req,res, params }) {
     const result = await Axios.post(`${MAIN_URL}/jobs/jobs-details`,obj,{headers:header})
     // const data = await res.json()
     let data=result.data;
-    if(data.status!=200){
-        console.log(data);   
+    if(data.status!=200 || !data?.data?.pageContent?.jobApplied){
+     
         res.statusCode = 301;
         res.setHeader('Location', `/404`);
         res.end();
