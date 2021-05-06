@@ -119,10 +119,10 @@ const basicAuth = async ()=>{
       }
 
       else {
-        props.globalAlert('error', res.data.message)
+        props.globalAlert('error',"Error While Sending OTP. Please try again later.")
       }
     }
-
+ setIsButtonDisabled(false);
   }
 
 
