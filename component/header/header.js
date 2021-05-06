@@ -269,7 +269,7 @@ const scrollToSectionOtherPage=(val)=>{
               <div className="login d-none d-sm-block">
                 <Link href="/login">
                   <a className="nav-link">
-                    <i className="fa fa-user" /> login
+                    <i className="fa fa-user" /> Apply Now
                   </a>
                 </Link>
               </div>
