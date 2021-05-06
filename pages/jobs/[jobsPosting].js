@@ -114,7 +114,7 @@ export async function getServerSideProps({ req,res, params }) {
     
     // const data = await res.json()
     let data=result.data;
-      if(data.status!=200){
+      if(data.status!=200 || data?.data?.pageContent?.jobsListing.length<1){
         console.log(data);   
         res.statusCode = 301;
         res.setHeader('Location', `/404`);
