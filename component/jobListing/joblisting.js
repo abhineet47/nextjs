@@ -911,8 +911,8 @@ setPagination = () => {
                     </Link> */}
 
                     
-                    <a   target="_BLANK" href={`${job.alias}`}>
-                      <a className="viewdeatails"><i className="fa fa-laptop" /> View Job</a>
+                    <a   target="_BLANK" href={`/${job.alias}`} className="viewdeatails">
+                      <i className="fa fa-laptop" /> View Job
                     </a>
                   </article>
                 </a>
