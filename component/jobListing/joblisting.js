@@ -883,7 +883,7 @@ setPagination = () => {
                 <a className="filter-pop" onClick={this.openFilter}><i className="fa fa-filter" /> Filter</a></div>
 
               {this.state.filteredData?.length > 0 && this.state.filteredData.map((job, index) => (
-                <a   target="_BLANK" href={`${job.alias}`} key={job._id}>
+                <a   target="_BLANK" href={`/${job.alias}`} key={job._id}>
 
                   <article>
                     <h3 >{job.name} <b className="d-none">in {job.location}</b><span className="alert alert-info" style={{display:'none'}}><i className="fa fa-asl-interpreting" /> job opening</span><span className="alert alert-primary"> {job.timePosted} </span> {job?.paidJob == 1 && <span className="alert alert-warning"><i className="fa fa-bell-o"></i> Hot</span>}</h3>
