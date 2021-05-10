@@ -191,8 +191,8 @@ const scrollToSectionOtherPage=(val)=>{
                   <li className="nav-item" key={index}>
                     {link.is_external ? (
                       <a
-                         href="/[dynamic]"
-                         as={`/${link.alias}`}
+                         href={`/${link.alias}`}
+                    
                         target="_blank"
                         className="nav-link"
                         onClick={() => props.globalMobileMenu(false)}
