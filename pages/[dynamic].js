@@ -119,21 +119,73 @@ const redirectCanonicalRoute=()=>{
 
 }
 
-export async function getServerSideProps({ req,res, params }) {
-
-
-
-    res.statusCode = 301;
- 
-    if(req.url.endsWith("jobs")){
-        res.setHeader('Location', `/jobs${req.url}`)
-    }else if(req.url.includes("job-in")){
-        res.setHeader('Location', `/job-detail${req.url}`)
-    }else{
-        res.setHeader('Location', `/404`);
+export async function getServerSideProps({ req, res, params }) {
+    let header = {};
+    let query = req?.headers?.cookie;
+    let queryUrl = query?.dynamic;
+  
+  
+    if (query) {
+      var langOwn = query.match("(^|;)\\s*" + "langOwn" + "\\s*=\\s*([^;]+)");
+      langOwn = langOwn ? langOwn.pop() : "";
+      if (langOwn) {
+        header.langOwn = langOwn;
+      }
+      var authtoken = query.match("(^|;)\\s*" + "authtoken" + "\\s*=\\s*([^;]+)");
+      authtoken = authtoken ? authtoken.pop() : "";
+      if (authtoken) {
+        header.jwt = authtoken;
+      }
+      var userId = query.match("(^|;)\\s*" + "userId" + "\\s*=\\s*([^;]+)");
+      userId = userId ? userId.pop() : "";
+      if (userId) {
+        header.userid = userId;
+      }
+      var latitude = query.match("(^|;)\\s*" + "latitude" + "\\s*=\\s*([^;]+)");
+      latitude = latitude ? latitude.pop() : "";
+      if (latitude) {
+        header.latitude = latitude;
+      }
+      var longitude = query.match("(^|;)\\s*" + "longitude" + "\\s*=\\s*([^;]+)");
+      longitude = longitude ? longitude.pop() : "";
+      if (longitude) {
+        header.longitude = longitude;
+      }
     }
-    res.end();
-    return {props: {}}
+    // Fetch data from external API
+    let result;
+    let jobDetails = false;
+    let obj = {
+      fromAlias: `${params.dynamic}`
+    };
+    if (params.dynamic.startsWith("job-detail-")) {
+       res.statusCode = 301;
+       res.setHeader("Location", `/job-detail${req.url}`);
+       res.end();
+       return { props: {} };
+    } else {
+      result = await Axios.post(`${MAIN_URL}/jobs/jobs-listing-new`, obj, {
+        headers: header
+      });
+    }
+  
+    // let res = await Axios.post(`${MAIN_URL}/jobs/jobs-listing-new`,obj, {headers:header})
+  
+    // const data = await res.json()
+    let data = result.data;
+    if(data.status!=200){  
+      res.statusCode = 301;
+      res.setHeader('Location', `/404`);
+      res.end();
+      return {props: {}};
+  }
+  
+  res.statusCode = 301;
+  res.setHeader("Location", `/jobs${req.url}`);
+  res.end();
+  return {props: {}};
+  
+  
   }
 
 const mapStateToProps = state => ({
