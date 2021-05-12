@@ -180,10 +180,11 @@ export async function getServerSideProps({ req, res, params }) {
       return {props: {}};
   }
   
-  res.statusCode = 301;
-  res.setHeader("Location", `/jobs${req.url}`);
-  res.end();
-  return {props: {}};
+   return { props: { data:data,
+    queryurl:queryUrl,
+    aliasApi:obj.fromAlias ,
+  apiCall:!datatt,
+  jobDetails:jobDetails} }
   
   
   }
