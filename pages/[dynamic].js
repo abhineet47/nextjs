@@ -163,7 +163,7 @@ export async function getServerSideProps({ req, res, params }) {
        res.setHeader("Location", `/job-detail${req.url}`);
        res.end();
        return { props: {} };
-    }else if(params.dynamic.endswith("-jobs")){
+    }else if(params.dynamic.endsWith("-jobs")){
  	 res.statusCode = 301;
        res.setHeader("Location", `/jobs${req.url}`);
        res.end();
