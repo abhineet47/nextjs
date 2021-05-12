@@ -163,13 +163,20 @@ export async function getServerSideProps({ req, res, params }) {
        res.setHeader("Location", `/job-detail${req.url}`);
        res.end();
        return { props: {} };
-    } else {
+    }else if(params.dynamic.endswith("-jobs")){
+ 	 res.statusCode = 301;
+       res.setHeader("Location", `/jobs${req.url}`);
+       res.end();
+       return { props: {} };
+
+
+}else {
       result = await Axios.post(`${MAIN_URL}/jobs/jobs-listing-new`, obj, {
         headers: header
       });
     }
   
-    // let res = await Axios.post(`${MAIN_URL}/jobs/jobs-listing-new`,obj, {headers:header})
+   
   
     // const data = await res.json()
     let data = result.data;
