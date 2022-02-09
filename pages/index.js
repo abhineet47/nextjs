@@ -45,17 +45,6 @@ const Home=(props)=>  {
   }
 
 
-export async function getStaticProps(context) {
-  
-
-
- 
-  return {
-    props: {
-      content:res.data?.data||{},
-    }
-  }
-}
 
 const mapStateToProps = state => ({
   currentClassData: state.product.currentJobData,
